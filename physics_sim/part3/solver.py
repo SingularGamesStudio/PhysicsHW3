@@ -380,8 +380,8 @@ def make_part3_solvers(bodies, dt, plane_y=0.0, broadphase=None):
             newton_iters=10,
             ngs_beta=0.0,
             ngs_slop=0.0,
-            xpbd_compliance=0.0,
-            xpbd_slop=0.0,
+            xpbd_compliance=0.001,
+            xpbd_slop=0.01,
             aabb_margin=0.02,
         ),
     }

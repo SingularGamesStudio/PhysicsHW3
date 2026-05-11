@@ -193,8 +193,8 @@ def make_part3_many_box_solvers(
                 newton_iters=10,
                 ngs_beta=0.0,
                 ngs_slop=0.0,
-                xpbd_compliance=0.0,
-                xpbd_slop=0.0,
+                xpbd_compliance=0.001,
+                xpbd_slop=0.01,
                 aabb_margin=aabb_margin,
             ),
         }
@@ -214,8 +214,8 @@ def make_part3_many_box_solvers(
                 newton_iters=10,
                 ngs_beta=0.0,
                 ngs_slop=0.0,
-                xpbd_compliance=0.0,
-                xpbd_slop=0.0,
+                xpbd_compliance=0.001,
+                xpbd_slop=0.01,
                 aabb_margin=aabb_margin,
             ),
         }
