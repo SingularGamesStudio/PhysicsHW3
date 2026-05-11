@@ -1,0 +1,7 @@
+
+{
+  "python.analysis.extraPaths": [
+    "./src",
+    "C:/Users/Traveler/AppData/Local/Programs/Python/Python313/Lib/site-packages"
+  ]
+}
