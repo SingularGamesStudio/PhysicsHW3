@@ -209,7 +209,7 @@ def make_part3_many_box_solvers(
                 broadphase=broadphase_xpbd,
                 vel_iters=0,
                 pos_iters=0,
-                xpbd_iters=14,
+                xpbd_iters=10,
                 xpbd_post_iters=4,
                 newton_iters=10,
                 ngs_beta=0.0,
