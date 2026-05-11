@@ -144,6 +144,7 @@ def make_part3_many_box_solvers(
     gap=0.02,
     drop_height=1.25,
     aabb_margin=0.02,
+    do_SI = True,
 ):
     bodies = make_part3_many_box_bodies(
         shape=shape,
@@ -159,44 +160,65 @@ def make_part3_many_box_solvers(
     # Separate broadphase instances because this implementation is stateful.
     broadphase_si = make_many_box_grid_broadphase(bodies, aabb_margin=aabb_margin)
     broadphase_xpbd = make_many_box_grid_broadphase(bodies, aabb_margin=aabb_margin)
-
-    return {
-        Part3Case.BOX_PILE_SI_NGS: Part3Solver(
-            bodies=bodies,
-            dt=dt,
-            case=Part3Case.BOX_PILE_SI_NGS,
-            gravity=vec3(0.0, -9.81, 0.0),
-            plane_y=plane_y,
-            broadphase=broadphase_si,
-            vel_iters=12,
-            pos_iters=10,
-            xpbd_iters=0,
-            newton_iters=10,
-            ngs_beta=0.45,
-            ngs_slop=1.0e-4,
-            xpbd_compliance=0.0,
-            xpbd_slop=0.0,
-            aabb_margin=aabb_margin,
-        ),
-        Part3Case.BOX_PILE_XPBD: Part3Solver(
-            bodies=bodies,
-            dt=dt,
-            case=Part3Case.BOX_PILE_XPBD,
-            gravity=vec3(0.0, -9.81, 0.0),
-            plane_y=plane_y,
-            broadphase=broadphase_xpbd,
-            vel_iters=0,
-            pos_iters=0,
-            xpbd_iters=14,
-            xpbd_post_iters=4,
-            newton_iters=10,
-            ngs_beta=0.0,
-            ngs_slop=0.0,
-            xpbd_compliance=0.0,
-            xpbd_slop=0.0,
-            aabb_margin=aabb_margin,
-        ),
-    }
+    if do_SI:
+        return {
+            Part3Case.BOX_PILE_SI_NGS: Part3Solver(
+                bodies=bodies,
+                dt=dt,
+                case=Part3Case.BOX_PILE_SI_NGS,
+                gravity=vec3(0.0, -9.81, 0.0),
+                plane_y=plane_y,
+                broadphase=broadphase_si,
+                vel_iters=12,
+                pos_iters=10,
+                xpbd_iters=0,
+                newton_iters=10,
+                ngs_beta=0.45,
+                ngs_slop=1.0e-4,
+                xpbd_compliance=0.0,
+                xpbd_slop=0.0,
+                aabb_margin=aabb_margin,
+            ),
+            Part3Case.BOX_PILE_XPBD: Part3Solver(
+                bodies=bodies,
+                dt=dt,
+                case=Part3Case.BOX_PILE_XPBD,
+                gravity=vec3(0.0, -9.81, 0.0),
+                plane_y=plane_y,
+                broadphase=broadphase_xpbd,
+                vel_iters=0,
+                pos_iters=0,
+                xpbd_iters=14,
+                xpbd_post_iters=4,
+                newton_iters=10,
+                ngs_beta=0.0,
+                ngs_slop=0.0,
+                xpbd_compliance=0.0,
+                xpbd_slop=0.0,
+                aabb_margin=aabb_margin,
+            ),
+        }
+    else:
+        return {
+            Part3Case.BOX_PILE_XPBD: Part3Solver(
+                bodies=bodies,
+                dt=dt,
+                case=Part3Case.BOX_PILE_XPBD,
+                gravity=vec3(0.0, -9.81, 0.0),
+                plane_y=plane_y,
+                broadphase=broadphase_xpbd,
+                vel_iters=0,
+                pos_iters=0,
+                xpbd_iters=14,
+                xpbd_post_iters=4,
+                newton_iters=10,
+                ngs_beta=0.0,
+                ngs_slop=0.0,
+                xpbd_compliance=0.0,
+                xpbd_slop=0.0,
+                aabb_margin=aabb_margin,
+            ),
+        }
 
 
 def simulate_part3_many_boxes(
