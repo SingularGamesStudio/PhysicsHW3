@@ -27,12 +27,10 @@ def build_part3_render_data(results, half_extents, columns=2, radius=8.0):
                 "props": {
                     "time": round(float(s["t"]), 4),
                     "contacts": int(s["contacts"]),
-                    "manifolds": int(s["manifolds"]),
-                    "pairs": int(s["candidate_pairs"]),
                     "E": round(float(s["E"]), 6),
-                    "hz": round(float(s["hz"]), 2),
+                    "TPS": round(float(s["hz"]), 2),
                 },
-                "graph": ["contacts", "E", "hz"],
+                "graph": ["contacts", "E", "TPS"],
             })
 
         sims.append({
@@ -43,7 +41,7 @@ def build_part3_render_data(results, half_extents, columns=2, radius=8.0):
         })
 
     return {
-        "title": "Part 3 — small 3D box pile with full contacts",
+        "title": "Part 3",
         "columns": int(columns),
         "sims": sims,
     }

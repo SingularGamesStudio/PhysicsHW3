@@ -43,7 +43,7 @@ def build_part1_render_data(results, half_extents, columns=2, radius=None):
             "frames": frames,
         })
     return {
-        "title": "Part 1 — rigid body rotation modes",
+        "title": "Part 1",
         "columns": int(columns),
         "sims": sims,
     }

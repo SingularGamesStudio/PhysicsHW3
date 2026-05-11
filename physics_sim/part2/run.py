@@ -26,7 +26,6 @@ def build_part2_render_data(results, half_extents, columns=2, radius=None):
                 "props": {
                     "time": round(float(s["t"]), 4),
                     "C": round(float(s["C"]), 6),
-                    "lambda": round(float(s["lambda"]), 6),
                     "E": round(float(s["E"]), 6),
                 },
                 "graph": ["C", "E"],
@@ -38,7 +37,7 @@ def build_part2_render_data(results, half_extents, columns=2, radius=None):
             "frames": frames,
         })
     return {
-        "title": "Part 2 — springs and off-center distance constraints",
+        "title": "Part 2",
         "columns": int(columns),
         "sims": sims,
     }

@@ -20,8 +20,8 @@ class Part4Case(Enum):
 
 
 CASE_LABELS_PART4 = {
-    Part4Case.MIXED_BOXES_XPBD_SAP: "XPBD: mixed-size rigid bodies with Sweep-and-Prune broadphase",
-    Part4Case.MIXED_BOXES_XPBD_LBVH: "XPBD: mixed-size rigid bodies with LBVH broadphase",
+    Part4Case.MIXED_BOXES_XPBD_SAP: "XPBD, Sweep-and-Prune",
+    Part4Case.MIXED_BOXES_XPBD_LBVH: "XPBD, LBVH",
 }
 
 

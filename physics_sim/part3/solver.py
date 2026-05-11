@@ -27,8 +27,8 @@ class Part3Case(Enum):
 
 
 CASE_LABELS = {
-    Part3Case.BOX_PILE_XPBD: "XPBD: 3D box pile with manifold contacts",
-    Part3Case.BOX_PILE_SI_NGS: "SI: 3D box pile with NGS position correction",
+    Part3Case.BOX_PILE_XPBD: "XPBD",
+    Part3Case.BOX_PILE_SI_NGS: "SI+NGS",
 }
 
 class Part3Solver:

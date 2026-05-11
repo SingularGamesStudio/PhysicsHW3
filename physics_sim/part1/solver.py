@@ -19,8 +19,8 @@ class Part1Case(Enum):
 
 
 CASE_LABELS = {
-    Part1Case.WORLD_CONSTANT_L: "World coords, constant L, frozen I_world",
-    Part1Case.LOCAL_NO_GYRO: "Local coords, no gyroscopic term",
+    Part1Case.WORLD_CONSTANT_L: "World coords, constant L",
+    Part1Case.LOCAL_NO_GYRO: "Local coords, no gyro",
     Part1Case.LOCAL_GYRO_EXPLICIT: "Local coords, gyro explicit",
     Part1Case.LOCAL_GYRO_IMPLICIT: "Local coords, gyro implicit",
 }

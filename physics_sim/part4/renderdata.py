@@ -30,12 +30,10 @@ def build_part4_render_data(results, bodies0, columns=2, radius=8.0):
                 "props": {
                     "time": round(float(s["t"]), 4),
                     "contacts": int(s["contacts"]),
-                    "manifolds": int(s["manifolds"]),
-                    "pairs": int(s["candidate_pairs"]),
                     "E": round(float(s["E"]), 6),
-                    "hz": round(float(s["hz"]), 2),
+                    "TPS": round(float(s["hz"]), 2),
                 },
-                "graph": ["contacts", "E", "hz"],
+                "graph": ["contacts", "E", "TPS"],
             })
 
         sims.append({
@@ -46,7 +44,7 @@ def build_part4_render_data(results, bodies0, columns=2, radius=8.0):
         })
 
     return {
-        "title": "Part 4 — many mixed-size rigid bodies with XPBD friction",
+        "title": "Part 4",
         "columns": int(columns),
         "sims": sims,
     }

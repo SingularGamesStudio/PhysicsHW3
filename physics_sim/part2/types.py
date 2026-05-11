@@ -52,7 +52,7 @@ class Part2Case(Enum):
 CASE_LABELS = {
     Part2Case.SPRING_FORCE_SI: "SI: off-center spring as external force",
     Part2Case.SPRING_SOFT_SI: "SI: off-center spring as soft constraint",
-    Part2Case.SPRING_XPBD: "XPBD: off-center spring (distance compliance)",
+    Part2Case.SPRING_XPBD: "XPBD: off-center spring",
     Part2Case.JOINT_XPBD: "XPBD: 2 bodies, off-center distance joint",
     Part2Case.JOINT_SI_BAUMGARTE: "SI: 2 bodies, Baumgarte position error fix",
     Part2Case.JOINT_SI_NGS: "SI: 2 bodies, Nonlinear Gauss-Seidel fix",
