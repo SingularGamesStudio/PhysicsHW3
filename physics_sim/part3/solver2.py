@@ -233,6 +233,7 @@ def simulate_part3_many_boxes(
     gap=0.02,
     drop_height=1.25,
     aabb_margin=0.02,
+    do_SI = True,
 ):
     solvers = make_part3_many_box_solvers(
         dt=dt,
@@ -245,6 +246,7 @@ def simulate_part3_many_boxes(
         gap=gap,
         drop_height=drop_height,
         aabb_margin=aabb_margin,
+        do_SI=do_SI,
     )
 
     results = {}
